@@ -24,16 +24,17 @@
                      <td class="p-3">{{ $loop->iteration}}</td>   
                       <td class="p-3">{{$c->name}}</td> 
                        <td class="p-3">{{$c->description}}</td>
-                       <td>
-<a href="{{route('category.edit', $c->id)}}">
-                 <x-secondary-button>Edit  </x-secondary-button>
-                </a>
-                <form method="POST" action="{{ route('category.destroy',$c->id) }}>
-                class="inline ml-1">
-        @csrf
-        @method('delete')
-<x-danger-button>Hapus  </x-damger-button>
-</form>
+                       <td class="p-3">
+                        <div class="flex items-center gap-2">
+                            <a href="{{route('category.edit', $c->id)}}">
+                                <x-secondary-button>Edit</x-secondary-button>
+                            </a>
+                            <form method="POST" action="{{ route('category.destroy',$c->id) }}" class="inline">
+                                @csrf
+                                @method('delete')
+                                <x-danger-button>Hapus</x-danger-button>
+                            </form>
+                        </div>
                     </td>
                     </tr>
                     @endforeach

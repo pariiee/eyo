@@ -16,8 +16,13 @@
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100">
+            @auth
             @include('layouts.navigation')
+            @endauth
 
+             @guest
+            @include('layouts.front-navigation')
+            @endguest
             <!-- Page Heading -->
             @isset($header)
                 <header class="bg-white shadow">

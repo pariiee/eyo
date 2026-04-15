@@ -15,8 +15,14 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
-<x-nav-link :href="route('category.index')" :active="request()->routeIs('category.index')">
+
+                    <x-nav-link :href="route('category.index')" :active="request()->routeIs('category.index')">
                         {{ __('Data Kategori') }}
+                    </x-nav-link>
+
+                     
+                    <x-nav-link :href="route('complaint.index')" :active="request()->routeIs('complaint.index')">
+                        {{ __('Data Pengaduan') }}
                     </x-nav-link>
                 </div>
             </div>
